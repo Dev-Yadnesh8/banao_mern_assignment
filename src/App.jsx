@@ -1,16 +1,13 @@
+import { PostCard } from "./Components";
+import posts from "./data/post.data";
+
 function App() {
   return (
-    <>
-      <div class="bg-primary text-white p-4 rounded-md ">
-        Primary background
-      </div>
-
-      <p class="text-gray-700">Dark gray text</p>
-
-      <button class="bg-green hover:bg-green/80 text-white px-4 py-2 rounded">
-        Confirm
-      </button>
-    </>
+    <div className="h-screen w-full font-display bg-gray-50">
+      {posts.map((post, index) => (
+        <PostCard key={index + Math.floor(Math.random())} post={post} />
+      ))}
+    </div>
   );
 }
 
