@@ -4,12 +4,11 @@ import { useState } from "react";
 import ProfileCard from "./PorfileCard";
 import IconButton from "./Buttons/IconButton";
 
-function Header({ onTriggerAuth,isLoggedIn}) {
-
+function Header({ onTriggerAuth, isLoggedIn }) {
   const [searchQuery, setSearchQuery] = useState();
 
   return (
-    <div className="hidden lg:flex justify-between items-center px-8 h-20 w-full border-b shadow-sm bg-white transition-all duration-500 ease-in-out">
+    <div className="hidden lg:flex sticky top-0 z-50 justify-between items-center px-8 h-20 w-full border-b border-gray-500 shadow-sm bg-white transition-all duration-500 ease-in-out">
       {/* Logo */}
       <img
         src="src/assets/company_logo.png"
@@ -56,7 +55,6 @@ function Header({ onTriggerAuth,isLoggedIn}) {
           />
         </div>
       )}
-      
     </div>
   );
 }

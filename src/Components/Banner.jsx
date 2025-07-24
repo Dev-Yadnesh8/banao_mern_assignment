@@ -3,12 +3,9 @@ import Button from "./Buttons/Button";
 import { useState } from "react";
 import IconButton from "./Buttons/IconButton";
 
-function Banner({ banner }) {
+function Banner({ banner ,isJoin,onJoinBtnClick }) {
   const { title, subtitle, imageUrl } = banner;
-  const [isJoin, setIsJoin] = useState(true);
-  function handleJoinButton() {
-    setIsJoin(!isJoin);
-  }
+ 
 
   return (
     <div className="relative w-full h-[236px] sm:h-[440px] overflow-hidden transition-all duration-500 ease-in-out">
@@ -25,7 +22,7 @@ function Banner({ banner }) {
         <IconButton icon={<ArrowLeft className="h-6 w-6 text-white" />} />
 
         <Button
-          onClick={handleJoinButton}
+          onClick={onJoinBtnClick}
           label={isJoin ? "Leave Group" : "Join Group"}
           variant="outlined"
           className="border-white text-white font-medium hover:bg-white/10 rounded-md text-sm px-4 py-1.5"

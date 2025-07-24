@@ -14,6 +14,11 @@ import { useState } from "react";
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isJoin, setIsJoin] = useState(true);
+  function handleJoinButtonClick() {
+    setIsJoin(!isJoin);
+  }
+
   return (
     <div className="min-h-screen w-full font-display">
       <Header
@@ -21,6 +26,8 @@ function App() {
         isLoggedIn={isLoggedIn}
       />
       <Banner
+        isJoin={isJoin}
+        onJoinBtnClick={handleJoinButtonClick}
         banner={{
           title: "Computer Engineering",
           subtitle: "152,890 Computer Engineers follow this",
@@ -30,7 +37,7 @@ function App() {
       />
 
       <div className="w-full max-w-7xl mx-auto md:px-10">
-        <ToolBar />
+        <ToolBar isJoin={isJoin} onJoinBtnClick={handleJoinButtonClick} />
 
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="flex-1">
