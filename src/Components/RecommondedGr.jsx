@@ -18,7 +18,7 @@ function RecommendedGroups() {
             <Button
               label={group.isFollowed ? "Followed" : "Follow"}
               variant={group.isFollowed ? "filled" :"solid"}
-              className="rounded-3xl max-w-14 text-xs px-6"
+              className={`rounded-3xl max-w-14 text-xs px-6 ${group.isFollowed ? "bg-gray-950 hover:bg-gray-800" : ""}`}
             />
           </div>
         ))}

@@ -1,4 +1,5 @@
 function Button({
+  type = "button",
   icon,
   label,
   onClick,
@@ -11,13 +12,12 @@ function Button({
   const variants = {
     solid: "bg-gray-200 hover:bg-gray-300",
     outlined: "border bg-transparent hover:bg-white/10",
-    filled: "bg-gray-900 text-white hover:bg-gray-800 px-10",
+    filled: " text-white  px-10",
   };
-
-
 
   return (
     <button
+    type={type}
       onClick={onClick}
       className={`
         ${baseClasses} 

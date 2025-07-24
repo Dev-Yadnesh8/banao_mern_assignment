@@ -21,7 +21,7 @@ function Banner({ banner }) {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent" />
       {/* Mobile Top Overlay (Back + Join Group) */}
-      <div className="lg:hidden absolute top-4 inset-x-0 px-4 md:px-[76px] lg:px-52 flex justify-between items-center z-10 ">
+      <div className="lg:hidden absolute top-4 inset-x-0 px-4  flex justify-between items-center z-10 ">
         <IconButton icon={<ArrowLeft className="h-6 w-6 text-white" />} />
 
         <Button
@@ -33,14 +33,17 @@ function Banner({ banner }) {
       </div>
 
       {/* Banner Content */}
-      <div className="absolute inset-0 flex flex-col justify-end px-4 md:px-[76px] lg:px-52   pb-8 sm:pb-14 text-white transition-all duration-500 ease-in-out">
-        <h2 className="text-xl sm:text-3xl font-semibold drop-shadow-md tracking-wide">
-          {title}
-        </h2>
-        <p className="text-sm sm:text-lg mt-2 font-extralight tracking-wider">
-          {subtitle}
-        </p>
-      </div>
+      <div className="absolute inset-0 flex flex-col justify-end items-start pb-8 sm:pb-14 text-white transition-all duration-500 ease-in-out">
+  <div className="w-full px-4  max-w-7xl mx-auto">
+    <h2 className="text-xl sm:text-3xl font-semibold drop-shadow-md tracking-wide">
+      {title}
+    </h2>
+    <p className="text-sm sm:text-lg mt-2 font-extralight tracking-wider">
+      {subtitle}
+    </p>
+  </div>
+</div>
+
     </div>
   );
 }

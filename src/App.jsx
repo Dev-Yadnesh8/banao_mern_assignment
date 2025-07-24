@@ -1,17 +1,25 @@
 import { Filter, Pencil, Plus } from "lucide-react";
 import {
+  AuthModal,
   Banner,
   FloatingActionButton,
+  Header,
   PostCard,
   RightSidebar,
   ToolBar,
 } from "./Components";
 import posts from "./data/post.data";
-
+import { useState } from "react";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="min-h-screen w-full font-display">
+      <Header
+        onTriggerAuth={() => setShowModal(true)}
+        isLoggedIn={isLoggedIn}
+      />
       <Banner
         banner={{
           title: "Computer Engineering",
@@ -36,9 +44,18 @@ function App() {
       </div>
 
       <FloatingActionButton icon={<Pencil />} onClick={() => {}} />
+      {/* Auth Modal */}
+      {showModal && (
+        <AuthModal
+          onClose={() => setShowModal(false)}
+          onSubmit={() => {
+            setShowModal(false);
+            setIsLoggedIn(true);
+          }}
+        />
+      )}
     </div>
   );
 }
-
 
 export default App;
