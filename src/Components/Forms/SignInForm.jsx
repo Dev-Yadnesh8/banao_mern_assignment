@@ -1,7 +1,7 @@
 import InputField from "../Input/InputField";
 import Button from "../Buttons/Button";
 
-function SignInForm({ onSubmit }) {
+function SignInForm({ onSubmit,toggleFormSwitchType }) {
   return (
     <form
       onSubmit={(e) => {
@@ -14,12 +14,22 @@ function SignInForm({ onSubmit }) {
       <InputField placeholder="Email" variant="solid" />
       <InputField placeholder="Password" variant="solid" type="password" />
 
-      <Button
-        type="submit"
-        label={"Sign In"}
-        variant="filled"
-        className="bg-[#2F6CE5] my-5 w-full rounded-full"
-      />
+      <div className="flex lg:block">
+        <Button
+          type="submit"
+          label={"Sign In"}
+          variant="filled"
+          className="bg-[#2F6CE5] my-5 w-full rounded-full "
+        />
+        {/* Switch on mobile */}
+        <button
+          type="button"
+          onClick={toggleFormSwitchType}
+          className="block lg:hidden text-gray-800 underline font-semibold text-xs flex-1/2 cursor-pointer"
+        >
+          or,Create Account
+        </button>
+      </div>
 
       <div className="flex flex-col gap-2">
         <Button

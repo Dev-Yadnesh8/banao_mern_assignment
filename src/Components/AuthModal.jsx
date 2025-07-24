@@ -8,7 +8,7 @@ export default function AuthModal({ onClose, onSubmit }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 flex items-end lg:items-center justify-center">
-      <div className="relative w-full lg:w-[736px] h-[90%] lg:h-[513px] bg-white rounded-t-2xl lg:rounded-lg shadow-lg flex flex-col overflow-hidden">
+      <div className="relative w-full lg:w-[736px] h-[70%] lg:h-[513px] bg-white rounded-t-2xl lg:rounded-lg shadow-lg flex flex-col overflow-hidden">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -18,7 +18,7 @@ export default function AuthModal({ onClose, onSubmit }) {
         </button>
 
         {/* Green Banner */}
-        <div className="bg-green-100 text-green-800 h-[50px] flex items-center px-4 text-sm font-medium">
+        <div className="hidden lg:flex items-center bg-green-100 text-green-800 h-[50px]   px-4 text-sm font-medium">
           Let's learn, share & inspire each other with our passion for computer
           engineering. Sign up now 🤘🏼
         </div>
@@ -28,9 +28,9 @@ export default function AuthModal({ onClose, onSubmit }) {
           {/* Left: Form */}
           <div className="w-full lg:w-1/2 py-6 px-6 lg:px-9">
             {isSignUp ? (
-              <SignUpForm onSubmit={onSubmit} />
+              <SignUpForm onSubmit={onSubmit} toggleFormSwitchType={() => setIsSignUp(false)} />
             ) : (
-              <SignInForm onSubmit={onSubmit} />
+              <SignInForm onSubmit={onSubmit} toggleFormSwitchType={() => setIsSignUp(true)}/>
             )}
           </div>
 
