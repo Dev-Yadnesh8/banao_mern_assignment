@@ -1,8 +1,13 @@
 import { Filter, Pencil, Plus } from "lucide-react";
-import { Banner, FloatingActionButton, PostCard } from "./Components";
-import Button from "./Components/Buttons/Button";
+import {
+  Banner,
+  FloatingActionButton,
+  PostCard,
+  RightSidebar,
+  ToolBar,
+} from "./Components";
 import posts from "./data/post.data";
-import IconButton from "./Components/Buttons/IconButton";
+
 
 function App() {
   return (
@@ -15,21 +20,25 @@ function App() {
             "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
         }}
       />
-      <div className="mt-3.5 mb-5 px-4 md:px-[76px] lg:px-52 flex justify-between items-center transition-all duration-500 ease-in-out">
-        <h3 className="font-bold">Posts({posts.length})</h3>
-        <Button
-          label={"Filter"}
-          icon={<Filter className="h-4 w-4" />}
-          className="rounded-md"
-        />
+
+      <div className="w-full max-w-7xl mx-auto md:px-10">
+        <ToolBar />
+
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="flex-1">
+            {posts.map((post, index) => (
+              <PostCard key={index} post={post} />
+            ))}
+          </div>
+
+          <RightSidebar />
+        </div>
       </div>
-      {posts.map((post, index) => (
-        <PostCard key={index + Math.floor(Math.random())} post={post} />
-      ))}
-      /* Floating Button - visible on mobile only */
-      <FloatingActionButton icon={<Pencil/>} onClick={()=>{}}/>        
+
+      <FloatingActionButton icon={<Pencil />} onClick={() => {}} />
     </div>
   );
 }
+
 
 export default App;

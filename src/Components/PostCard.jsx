@@ -16,7 +16,7 @@ function PostCard({ post, onOptionsClick, onShare, onCtaClick }) {
 
 
   return (
-    <div className="w-full max-w-[692px]  border border-gray-400 my-1.5 mx-0 md:mx-14 lg:mx-52 transition-all duration-500 ease-in-out">
+    <div className="w-full max-w-[692px]  border border-gray-400  transition-all duration-500 ease-in-out">
       {post.imageUrl && (
         <img
           className="w-full h-[120px] object-cover"

@@ -19,7 +19,7 @@ export const posts = [
     tag: "💼 Job",
     title: "Frontend Developer @ Google",
     imageUrl:
-      "https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     location: "Bangalore, India",
     date: "Apply by 30th August, 2025",
     cta: "Apply Now",
