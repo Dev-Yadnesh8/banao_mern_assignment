@@ -1,9 +1,24 @@
-import { Calendar1, Ellipsis, Locate, MapPin, Share2 } from "lucide-react";
+import { Calendar1, Ellipsis, MapPin, Share2 } from "lucide-react";
 import IconButton from "./Buttons/IconButton";
 import ProfileCard from "./PorfileCard";
 import Button from "./Buttons/Button";
+import { useRef, useState } from "react";
+import Menu from "./Menu";
 
 function PostCard({ post, onOptionsClick, onShare, onCtaClick }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const menuButtonRef = useRef();
+
+  const handleMenuOpen = () => {
+    const rect = menuButtonRef.current.getBoundingClientRect();
+    setMenuPosition({
+      top: rect.bottom + window.scrollY,
+      left: rect.left + window.scrollX - 160,
+    });
+    setMenuOpen(true);
+  };
+
   const isEvent = post.type === "event";
   const eventStyles = [
     "text-red border-gray-600 hover:border-red font-medium w-full text-center rounded-xl mt-4",
@@ -13,7 +28,6 @@ function PostCard({ post, onOptionsClick, onShare, onCtaClick }) {
   const ctaColorClasses = isEvent
     ? eventStyles[Math.floor(Math.random() * 2)]
     : "text-gray-900 border-gray-400";
-
 
   return (
     <div className="w-full max-w-[692px] mb-4  border border-gray-400  transition-all duration-500 ease-in-out">
@@ -32,7 +46,9 @@ function PostCard({ post, onOptionsClick, onShare, onCtaClick }) {
         {/* Title + Options */}
         <div className="flex justify-between mt-4 gap-2">
           <h3 className="font-bold text-lg leading-snug">{post.title}</h3>
-          <IconButton icon={<Ellipsis />} onClick={onOptionsClick} />
+          <span ref={menuButtonRef}>
+            <IconButton icon={<Ellipsis />} onClick={handleMenuOpen} />
+          </span>
         </div>
 
         {/* Description or Event Info */}
@@ -82,6 +98,27 @@ function PostCard({ post, onOptionsClick, onShare, onCtaClick }) {
           />
         </div>
       </div>
+      {/* Menu */}
+      {menuOpen && (
+        <Menu
+          position={menuPosition}
+          onClose={() => setMenuOpen(false)}
+          items={[
+            {
+              label: "Edit",
+              onClick: () => console.log("Edit clicked"),
+            },
+            {
+              label: "Report",
+              onClick: () => console.log("Report clicked"),
+            },
+            {
+              label: "Option 3",
+              onClick: () => console.log("Option 3 clicked"),
+            },
+          ]}
+        />
+      )}
     </div>
   );
 }
