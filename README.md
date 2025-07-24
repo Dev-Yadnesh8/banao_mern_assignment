@@ -1,12 +1,24 @@
-# React + Vite
+# 📘 Assignment Project – React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Submitted by Yadnesh Narawade**  
+**Internship Role: MERN Stack Developer**  
+**Company: Banao Tech / ATG World**
 
-Currently, two official plugins are available:
+This is a fully responsive and interactive React project built using the Vite build tool. It was developed as part of the internship assignment for Banao Tech / ATG World. The application demonstrates core frontend skills, including responsive design, component reusability, modals, sticky headers/toolbars, and state management in a modern React environment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ **React** – component-based UI
+- ⚡ **Vite** – lightning-fast dev environment
+- 🎨 **Tailwind CSS** – utility-first styling
+- 🧩 **Lucide Icons** – for elegant icons
+
+## 🚀 Features
+
+- ✅ Fully responsive layout
+- ✅ Modal with full-screen overlay and fixed-width content
+- ✅ Sticky header and toolbar
+- ✅ Contextual 3-dot menu with options like Edit, Report, Delete
+- ✅ Reusable components (`Button`, `IconButton`, `Modal`, `Menu`)
+- ✅ Lightweight and dependency-free positioning logic
