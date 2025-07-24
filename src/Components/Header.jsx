@@ -11,7 +11,7 @@ function Header({ onTriggerAuth, isLoggedIn }) {
     <div className="hidden lg:flex sticky top-0 z-50 justify-between items-center px-8 h-20 w-full border-b border-gray-500 shadow-sm bg-white transition-all duration-500 ease-in-out">
       {/* Logo */}
       <img
-        src="src/assets/company_logo.png"
+        src="/company_logo.png"
         alt="Company Logo"
         className="h-6 object-contain"
       />

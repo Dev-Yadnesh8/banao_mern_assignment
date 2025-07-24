@@ -1,6 +1,7 @@
 import Button from "../Buttons/Button";
 import InputField from "../Input/InputField";
 
+
 function SignUpForm({ onSubmit, toggleFormSwitchType }) {
   return (
     <form
@@ -50,12 +51,12 @@ function SignUpForm({ onSubmit, toggleFormSwitchType }) {
         <Button
           label={"Sign up with Facebook"}
           variant="outlined"
-          icon={<img src="src/assets/fb_logo.png" className="h-4 w-4" />}
+          icon={<img src="/fb_logo.png" className="h-4 w-4" />}
         />
         <Button
           label={"Sign up with Google"}
           variant="outlined"
-          icon={<img src="src/assets/google.svg.png" className="h-4 w-4" />}
+          icon={<img src="/google.svg.png" className="h-4 w-4" />}
         />
       </div>
     </form>

@@ -61,7 +61,7 @@ export default function AuthModal({ onClose, onSubmit }) {
             </div>
 
             <img
-              src="src/assets/atg_illustration.png"
+              src="/atg_illustration.png"
               alt="Auth Illustration"
               className="w-80 h-80 object-contain"
             />

@@ -33,16 +33,14 @@ function SignInForm({ onSubmit,toggleFormSwitchType }) {
 
       <div className="flex flex-col gap-2">
         <Button
-          type="submit"
-          label={"Sign in with Facebook"}
+          label={"Sign In with Facebook"}
           variant="outlined"
-          icon={<img src="src/assets/fb_logo.png" className="h-4 w-4" />}
+          icon={<img src="/fb_logo.png" className="h-4 w-4" />}
         />
         <Button
-          type="submit"
-          label={"Sign in with Google"}
+          label={"Sign In with Google"}
           variant="outlined"
-          icon={<img src="src/assets/google.svg.png" className="h-4 w-4" />}
+          icon={<img src="/google.svg.png" className="h-4 w-4" />}
         />
 
         <p className="text-xs text-gray-500 underline cursor-pointer mb-8 mt-6 ">
